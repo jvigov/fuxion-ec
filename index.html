@@ -1115,17 +1115,6 @@ const CATS = [
   {id:'gastro',  lbl:'Gastronómica'},
   {id:'combos',   lbl:'Combos 🔥'},
 ];
-
-const PRODUCTS = [
-  // ═══ COMBOS ═══
-  {id:'combo_defensa',      name:'Combo Defensa Natural',      cat:'combos', lbl:'Combos', badge:'🛡 Combo', desc:'Prunex1 + Vera+ + Vita Xtra T+ + Biopro+ Tect. Fortalece tu sistema inmune.', price:'221.50', top:false},
-  {id:'combo_detox',        name:'Combo Detox',                cat:'combos', lbl:'Combos', badge:'🌿 Combo', desc:'Vita Xtra T+ + Flora Liv + Prunex1 + Alpha Balance. Limpieza y purificación.', price:'227.50', top:false},
-  {id:'combo_full_power',   name:'Combo Full Power',           cat:'combos', lbl:'Combos', badge:'⚡ Combo', desc:'Vita Xtra T+ + ON. Energía y concentración al máximo.', price:'207.49', top:false},
-  {id:'combo_nutricion',    name:'Combo Nutrición Celular',    cat:'combos', lbl:'Combos', badge:'💪 Combo', desc:'Biopro+ Tect + Alpha Balance + Vita Xtra T+. Nutrición completa.', price:'215.49', top:false},
-  {id:'combo_sport',        name:'Combo Sport',                cat:'combos', lbl:'Combos', badge:'🏋 Combo', desc:'Biopro+ Sport + Pre Sport + Thermo T3. Rendimiento y recuperación.', price:'209.50', top:false},
-  {id:'combo_siempre_joven',name:'Combo Siempre Joven',        cat:'combos', lbl:'Combos', badge:'✨ Combo', desc:'Vita Xtra T+ + Flora Liv + Youth Elixir + Golden Flx. Anti-edad integral.', price:'221.50', top:false},
-];
-
 const tabsEl = document.getElementById('tabs');
 tabsEl.innerHTML = CATS.map((c,i)=>`<button class="tab ${i===0?'on':''}" onclick="fc('${c.id}',this)">${c.lbl}</button>`).join('');
 
