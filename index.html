@@ -995,8 +995,7 @@ function renderCoStep(){
     const orderNum='EC-'+Date.now().toString().slice(-6);
     coData.orderNum=orderNum;
     const items=Object.values(cart);
-    const itemsTxt=items.map(i=>i.qty+'x '+i.name+' '+fmt(i.price)).join('
-');
+    const itemsTxt=items.map(i=>i.qty+'x '+i.name+' '+fmt(i.price)).join('\n');
     const waMsg=`🛒 *PEDIDO FUXION ECUADOR*
 
 *Nro:* ${orderNum}
