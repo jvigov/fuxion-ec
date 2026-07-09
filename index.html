@@ -274,9 +274,9 @@ footer{background:#080808;padding:52px 20px 28px}
 /* CHECKOUT MODAL */
 .co-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
 .co-overlay.open{opacity:1;pointer-events:all}
-.co-modal{position:fixed;bottom:0;left:0;right:0;z-index:501;background:#fff;border-radius:20px 20px 0 0;max-height:92vh;overflow-y:auto;transform:translateY(100%);transition:transform .38s cubic-bezier(.4,0,.2,1)}
-.co-modal.open{transform:translateY(0)}
-@media(min-width:560px){.co-modal{left:50%;right:auto;bottom:50%;transform:translate(-50%,50%) scale(.96);width:420px;border-radius:20px;max-height:88vh}.co-modal.open{transform:translate(-50%,50%) scale(1)}}
+.co-modal{position:fixed;bottom:0;left:0;right:0;z-index:501;background:#fff;border-radius:20px 20px 0 0;max-height:92vh;overflow-y:auto;transform:translateY(100%);transition:transform .38s cubic-bezier(.4,0,.2,1);visibility:hidden}
+.co-modal.open{transform:translateY(0);visibility:visible}
+@media(min-width:560px){.co-modal{left:50%;right:auto;bottom:50%;transform:translate(-50%,50%) scale(.96);width:420px;border-radius:20px;max-height:88vh;visibility:hidden;opacity:0}.co-modal.open{transform:translate(-50%,50%) scale(1);visibility:visible;opacity:1}}
 .co-head{padding:18px 20px 0;display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
 .co-steps{display:flex;gap:6px;align-items:center}
 .co-step{width:28px;height:4px;border-radius:2px;background:var(--border);transition:background .3s}
@@ -1074,11 +1074,17 @@ function selBanco(b){
 }
 
 // ═══ RENDER PRODUCTS ═══
+function getImgHTML(id){
+  if(IMGS[id]){
+    return '<img src="'+IMGS[id]+'" alt="Fuxion '+id+'" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top">';
+  }
+  return '<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:52px">🌿</div>';
+}
 function pcHTML(p){
   const url = PL[p.id]||BUY;
   return `<div class="pc ${p.top?'top':''}">
     ${p.badge?`<div class="pc-badge ${p.badge.includes('🔥')?'fire':p.badge.includes('🆕')?'new':''}">${p.badge}</div>`:''}
-    <div class="pc-img">${IMGS[p.id] ? `<img src="${IMGS[p.id]}" alt="${p.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top">` : '<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:52px">🌿</div>'}</div>
+    <div class="pc-img">${getImgHTML(p.id)}</div>
     <div class="pc-body">
       <div class="pc-cat">${p.lbl}</div>
       <div class="pc-name">${p.name}</div>
