@@ -725,7 +725,7 @@ const PL = {
 };
 
 function gtev(){if(typeof gtag!=='undefined')gtag('event','conversion',{'send_to':CFG.gtag_send_to});}
-function goWa(){gtev();window.open(WA,'_blank');}
+function goWa(){gtag('event','conversion',{'send_to':CFG.gtag_send_to,'event_callback':function(){window.open(WA,'_blank');}});}
 function goBuy(){gtev();window.open(BUY,'_blank');}
 function goProd(url){gtev();window.open(url,'_blank');}
 function goWaProd(name){gtev();window.open('https://wa.me/'+CFG.wa_tel+'&text='+encodeURIComponent('Hola, me interesa el producto '+name+' de Fuxion 🌿'),'_blank');}
