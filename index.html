@@ -13,14 +13,14 @@
 <meta property="og:url" content="https://fuxion-ec.vercel.app">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://fuxion-ec.vercel.app">
-<!-- Google tag (gtag.js) — PENDIENTE -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GTAG_EC_PLACEHOLDER"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18097076762"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'GTAG_EC_PLACEHOLDER');
-</script> -->
+  gtag('config', 'AW-18097076762');
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -677,8 +677,8 @@ const CFG = {
   envio: 4.10,
   envio_gratis: 120.00,
   envio_galapagos: 15.50,
-  gtag_id: 'GTAG_EC_PLACEHOLDER',
-  gtag_send_to: 'SEND_TO_EC_PLACEHOLDER',
+  gtag_id: 'AW-18097076762',
+  gtag_send_to: 'AW-18097076762/6PVBCPaJo84cEJr0rbVD',
   webhook: 'https://script.google.com/macros/s/WEBHOOK_EC_PLACEHOLDER/exec'
 };
 
@@ -1152,6 +1152,33 @@ document.querySelectorAll('.sr').forEach(el=>observer.observe(el));
 
 // ═══ INIT ═══
 updateCartUI();
+</script>
+<!-- VIVETRAX ECUADOR — SISTEMA DE TRACKING -->
+<script>
+const _vx_fired = new Set();
+
+function vxTrack(eventName, params, isConversion) {
+  var key = eventName + JSON.stringify(params);
+  if (_vx_fired.has(key)) return;
+  _vx_fired.add(key);
+  var base = { distributor_alias:'darling0708', country:'EC' };
+  var full = Object.assign({}, base, params);
+  if (isConversion) {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18097076762/6PVBCPaJo84cEJr0rbVD',
+      'event_callback': function(){}
+    });
+  }
+  gtag('event', eventName, full);
+}
+
+function vxWaProduct(p, c) { vxTrack('whatsapp_click_product', {product_name:p, product_category:c, button_location:'product_card'}, true); }
+function vxWaHero() { vxTrack('whatsapp_click_hero', {button_location:'hero'}, true); }
+function vxWaCta() { vxTrack('whatsapp_click_cta', {button_location:'cta_band'}, true); }
+function vxWaFooter() { vxTrack('whatsapp_click_footer', {button_location:'footer'}, true); }
+function vxBuyProduct(p, c) { vxTrack('powerlink_click_product', {product_name:p, product_category:c, button_location:'product_card'}, true); }
+function vxStoreGeneral() { vxTrack('store_click_general', {button_location:'navbar'}, true); }
+function vxEmprender(l) { vxTrack('affiliation_click', {button_location:l}, true); }
 </script>
 </body>
 </html>
